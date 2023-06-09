@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"quiz/client"
+	"time"
 )
 
 type QuizRunner struct {
@@ -24,6 +25,8 @@ func (qr *QuizRunner) Start() error {
 
 	var totalMarks = 0
 
+	start := time.Now()
+
 	for _, q := range questions {
 		var ans string
 		fmt.Print("\n" + q.Quesion)
@@ -39,7 +42,10 @@ func (qr *QuizRunner) Start() error {
 			fmt.Println("[Incorrect]")
 		}
 	}
+	now := time.Now()
+	d := now.Sub(start)
 
-	fmt.Println("\n\nResult: ", totalMarks)
+	fmt.Println("\n\nTotal marks: ", totalMarks)
+	fmt.Printf("Total time taken: %.0fs\n", d.Seconds())
 	return nil
 }
