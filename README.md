@@ -1,4 +1,4 @@
-# Math Quizz Application,
+# Math Quiz Application
 ## Read questions from a csv file(3 columns: question, answer, marks), prompt questions one by one, read answers from user. Each question would have specific weightage(marks) between 1 to 5. At end of the quizz, Compute and display the total marks.
 ### create an example csv file like:
 ```
